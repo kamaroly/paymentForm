@@ -1,0 +1,10 @@
+<svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Your_Icon" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<metadata>
+	<sfw xmlns="http://ns.adobe.com/SaveForWeb/1.0/">
+		<slices/>
+		<sliceSourceBounds width="67.265" height="86.351" x="86.235" y="36.5" bottomLeftOrigin="true"/>
+	</sfw>
+</metadata>
+<path d="M16.735,45.917V93H84V45.917H16.735z M46.262,80.753L35.721,70.214l4.396-4.395l6.145,6.144L61.24,56.983l4.393,4.395  L46.262,80.753z"/>
+<path d="M36.913,30.194c0.039-2.816-0.004-13.453,13.453-13.453S63.78,27.422,63.818,30.194v10.09h10.093V30.192  c0,0-0.003-23.542-23.543-23.542c-23.539,0-23.544,23.542-23.544,23.542v10.093h10.089V30.194z"/>
+</svg>
