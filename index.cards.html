@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>A better card payment form </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="/js/card-form.js"></script>
+<script src="/js/phone-form.js" type="text/javascript" charset="utf-8" async defer></script>
+  <link href="/css/card-form.css" media="screen" rel="stylesheet" />
+
+</head>
+
+<body id="body">
+<div class="ui page grid">
+
+ <div class="column">
+    <form accept-charset="UTF-8" class="ui form segment rahasi-form" method="post">
+
+      <fieldset class="cardInfo__cardDetails">
+
+   
+        <div class="form-row cardInfo__cc-num">
+          <label for="cc-num">
+            <abbr title="required">*</abbr>
+            <span>Card Number</span>
+          </label>
+          <div class="cc-num__wrap">
+            <input id="cc-num" type="tel" class="paymentInput cc-num" placeholder="•••• •••• •••• ••••" autocompletetype="cc-number" required="required">
+            <span class="card" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="form-row cardInfo__cc-exp">
+          <label for="cc-exp">
+            <abbr title="required">*</abbr>
+            <span>Expires</span>
+          </label>
+          <input id="cc-exp" type="tel" class="paymentInput cc-exp cc-exp__demo" placeholder="MM / YY" autocompletetype="cc-exp" required="required">
+        </div>
+
+        <div class="form-row cardInfo__cc-cvc">
+          <label for="cc-cvc">
+            <abbr title="required">*</abbr>
+            <span>CVC</span>
+          </label>
+          <input id="cc-cvc" type="tel" class="paymentInput cc-cvc cc-cvc__demo" placeholder="CVC" autocompletetype="cc-cvc" required="required">
+        </div>
+
+        <div class="cardInfo__submission">
+          <input class="button" name="commit" type="submit" value="Make Payment">
+          <a class="cancel-link" href="#">Cancel</a>
+        </div>
+      </fieldset> 
+    </form>
+</div>
+</div>
+
+</body>
+</html>

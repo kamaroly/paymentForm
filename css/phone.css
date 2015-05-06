@@ -1,0 +1,81 @@
+.rahasi-form {
+  padding: 2.825em 0 1.4125em 0;
+  font-size: 1.25em;
+  margin: 0 auto;
+}
+input[type="email"],input[type="number"],input[type="password"],input[type="search"],input[type="tel"],input[type="text"],input[type="url"],input[type="color"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="month"],input[type="time"],input[type="week"] {
+  width: 100%;
+  display: block;
+  margin-top: .35em;
+  padding: .35em;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-radius: .1875em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type="email"].identified,input[type="number"].identified,input[type="password"].identified,input[type="search"].identified,input[type="tel"].identified,input[type="text"].identified,input[type="url"].identified,input[type="color"].identified,input[type="date"].identified,input[type="datetime"].identified,input[type="datetime-local"].identified,input[type="month"].identified,input[type="time"].identified,input[type="week"].identified {
+  border-color: #2ecc71;
+}
+
+input[type="email"]:focus,input[type="number"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="color"]:focus,input[type="date"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="month"]:focus,input[type="time"]:focus,input[type="week"]:focus {
+  border-color: #fff;
+  -webkit-box-shadow: 0 0 .1875em #3498db;
+  box-shadow: 0 0 .1875em #3498db;
+  outline: none;
+}
+
+input[type="email"]:focus.identified,input[type="number"]:focus.identified,input[type="password"]:focus.identified,input[type="search"]:focus.identified,input[type="tel"]:focus.identified,input[type="text"]:focus.identified,input[type="url"]:focus.identified,input[type="color"]:focus.identified,input[type="date"]:focus.identified,input[type="datetime"]:focus.identified,input[type="datetime-local"]:focus.identified,input[type="month"]:focus.identified,input[type="time"]:focus.identified,input[type="week"]:focus.identified {
+  border-color: #2ecc71;
+  -webkit-box-shadow: 0 0 .1875em #2ecc71;
+  box-shadow: 0 0 .1875em #2ecc71;
+}
+
+input[type="submit"] {
+  font-size: .875em;
+  background: #2ecc71;
+  border: solid 1px #29b765;
+  padding: .375em .5em;
+  color: #fff;
+  border-radius: .1875em;
+}
+
+.cancel-link {
+  font-size: .875em;
+  float: right;
+  color: #bbb;
+  padding-top: .375em;
+}
+
+/** PHONE SECTION */
+.cc-mobile-num__wrap{
+  position:relative;
+}
+.mobile{
+  position:absolute;
+  display:block;
+  right:.375em;
+  top:50%;
+  margin-top:-10px;
+  width:28px;
+  height:19px;
+  background: url('/images/visa.png') no-repeat center center;
+  background-size: 100%;
+}
+
+.mobile.tigo {
+  background: url(/images/smartcard.png) no-repeat center center;
+}
+
+.mobile.mtn {
+  background: url(/images/amex.png) no-repeat center center;
+}
+
+.mobile.airtel {
+  background: url(/images/mastercard.png) no-repeat center center;
+}

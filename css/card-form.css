@@ -264,29 +264,6 @@ input[type="submit"] {
   background-size: 100%;
 }
 
-.mobile{
-  position:absolute;
-  display:block;
-  right:.375em;
-  top:50%;
-  margin-top:-10px;
-  width:28px;
-  height:19px;
-  background: url('/images/visa.png') no-repeat center center;
-  background-size: 100%;
-}
-
-.mobile.tigo {
-  background: url(/images/smartcard.png) no-repeat center center;
-}
-
-.mobile.mtn {
-  background: url(/images/amex.png) no-repeat center center;
-}
-
-.mobile.airtel {
-  background: url(/images/mastercard.png) no-repeat center center;
-}
 .cardInfo__cc-exp,
 .cardInfo__cc-cvc{
   float:left;

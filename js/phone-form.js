@@ -1,6 +1,37 @@
  $(function() {
-      /** Only allow numbers in the phone-num field */
-       $(".phone-num").keydown(function (e) {
+     
+    ///////////////////////////////////
+    // FIRST CREATING TELEPHONE FORM INPUT //
+    ///////////////////////////////////
+    
+    //
+    // adding phone div to the input
+    $('<div>',{
+        'class' :'cc-mobile-num__wrap'
+         // appending the created element to 'rahasi-form':
+    }).appendTo('.rahasi-form');
+    // Add phone field to the form
+    $('<input>', {
+        'type' : 'tel',
+        'name' : 'msisdn',
+        'id'   : 'rahasi-phone',
+        'class': 'rahasi-phone' 
+    // appending the created element t '.cc-mobile-num__wrap':
+    }).appendTo('.cc-mobile-num__wrap');
+
+    $('<span>',{
+        'class' : 'mobile',
+        'aria-hidden' : 'true'
+       // appending the created element t '.cc-mobile-num__wrap':
+    }).appendTo('.cc-mobile-num__wrap');
+
+
+    //////////////////////////////////////////
+    // NOW LISTEN TO THE EVENTS IN THE FORM //
+    //////////////////////////////////////////
+    
+        /** Only allow numbers in the phone-num field */
+       $(".rahasi-phone").keydown(function (e) {
         // Allow: backspace, delete, tab, escape, enter and .
         if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
              // Allow: Ctrl+A, Command+A
@@ -18,7 +49,7 @@
 
       var validatePhone = function() {
           // Get the input phone number
-         var phoneNumber = $('.phone-num').val();
+         var phoneNumber = $('.rahasi-phone').val();
           
          // Get the first 3 phone numeric
          var phoneType   = phoneNumber.substr(0,3);
@@ -54,16 +85,10 @@
         }
       };
  
-   $('.phone-num').bind('change paste keyup', function() 
+   $('.rahasi-phone').on('change paste keyup', function() 
    {
+      console.log('okay I get it');
       validatePhone();
    });
-    
-      $('<input>', {
-                'type' : 'tel',
-                'name' : 'msisdn',
-                'id'   : 'phone-num', 
-                'value': '250', 
-            // appending the created element t '#content_container':
-            }).appendTo('#content_container');
+
 });
