@@ -1383,6 +1383,7 @@
           }
         }
     };
+    
     var getOperator = function(phone) {
           // Get the input phone number
          var operator = operatorFromNumber(phone.val());
@@ -1396,7 +1397,7 @@
               return;
             };
 
-            console.log($('.mobile').addClass(operator));;
+            $('.mobile').addClass(operator);
        };
  
    // $('.rahasi-phone').on('change paste keyup', function(e) 
@@ -1431,8 +1432,6 @@
       phoneInput.on ('change paste keyup', function () {
                 var phone = $(this);
 
-                console.log(operatorFromNumber(phone.val()));
-                return;
                 getOperator(phone);
                 // limit number to 13 characters
                 if(this.value.length > 16){

@@ -11,7 +11,7 @@
   font-size: 1em;
   margin: 0px auto;
 }
-input[type="email"],input[type="number"],input[type="password"],input[type="search"],input[type="tel"],input[type="text"],input[type="url"],input[type="color"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="month"],input[type="time"],input[type="week"] {
+ .rahasi-form input[type="email"],.rahasi-form input[type="number"],.rahasi-form input[type="password"],.rahasi-form input[type="search"],.rahasi-form input[type="tel"],.rahasi-form input[type="text"],.rahasi-form input[type="url"],.rahasi-form input[type="color"],.rahasi-form input[type="date"],.rahasi-form input[type="datetime"],.rahasi-form input[type="datetime-local"],.rahasi-form input[type="month"],.rahasi-form input[type="time"],.rahasi-form input[type="week"] {
   width: 100%;
   display: block;
   margin-top: .35em;
@@ -27,24 +27,24 @@ input[type="email"],input[type="number"],input[type="password"],input[type="sear
   -webkit-font-smoothing: antialiased;
 }
 
-input[type="email"].identified,input[type="number"].identified,input[type="password"].identified,input[type="search"].identified,input[type="tel"].identified,input[type="text"].identified,input[type="url"].identified,input[type="color"].identified,input[type="date"].identified,input[type="datetime"].identified,input[type="datetime-local"].identified,input[type="month"].identified,input[type="time"].identified,input[type="week"].identified {
+.rahasi-form input[type="email"].identified,.rahasi-form input[type="number"].identified,.rahasi-form input[type="password"].identified,.rahasi-form input[type="search"].identified,.rahasi-form input[type="tel"].identified,.rahasi-form input[type="text"].identified,.rahasi-form input[type="url"].identified,.rahasi-form input[type="color"].identified,.rahasi-form input[type="date"].identified,.rahasi-form input[type="datetime"].identified,.rahasi-form input[type="datetime-local"].identified,.rahasi-form input[type="month"].identified,.rahasi-form input[type="time"].identified,.rahasi-form input[type="week"].identified {
   border-color: #2ecc71;
 }
 
-input[type="email"]:focus,input[type="number"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="color"]:focus,input[type="date"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="month"]:focus,input[type="time"]:focus,input[type="week"]:focus {
+.rahasi-form input[type="email"]:focus,.rahasi-form input[type="number"]:focus,.rahasi-form input[type="password"]:focus,.rahasi-form input[type="search"]:focus,.rahasi-form input[type="tel"]:focus,.rahasi-form input[type="text"]:focus,.rahasi-form input[type="url"]:focus,.rahasi-form input[type="color"]:focus,.rahasi-form input[type="date"]:focus,.rahasi-form input[type="datetime"]:focus,.rahasi-form input[type="datetime-local"]:focus,.rahasi-form input[type="month"]:focus,.rahasi-form input[type="time"]:focus,.rahasi-form input[type="week"]:focus {
   border-color: #fff;
   -webkit-box-shadow: 0 0 .1875em #3498db;
   box-shadow: 0 0 .2875em #3498db;
   outline: none;
 }
 
-input[type="email"]:focus.identified,input[type="number"]:focus.identified,input[type="password"]:focus.identified,input[type="search"]:focus.identified,input[type="tel"]:focus.identified,input[type="text"]:focus.identified,input[type="url"]:focus.identified,input[type="color"]:focus.identified,input[type="date"]:focus.identified,input[type="datetime"]:focus.identified,input[type="datetime-local"]:focus.identified,input[type="month"]:focus.identified,input[type="time"]:focus.identified,input[type="week"]:focus.identified {
+.rahasi-form input[type="email"]:focus.identified,.rahasi-form input[type="number"]:focus.identified,.rahasi-form input[type="password"]:focus.identified,.rahasi-form input[type="search"]:focus.identified,.rahasi-form input[type="tel"]:focus.identified,.rahasi-form input[type="text"]:focus.identified,.rahasi-form input[type="url"]:focus.identified,.rahasi-form input[type="color"]:focus.identified,.rahasi-form input[type="date"]:focus.identified,.rahasi-form input[type="datetime"]:focus.identified,.rahasi-form input[type="datetime-local"]:focus.identified,.rahasi-form input[type="month"]:focus.identified,.rahasi-form input[type="time"]:focus.identified,.rahasi-form input[type="week"]:focus.identified {
   border-color: #2ecc71;
   -webkit-box-shadow: 0 0 .1875em #2ecc71;
   box-shadow: 0 0 .1875em #2ecc71;
 }
 
-input[type="submit"] {
+.rahasi-form input[type="submit"] {
   font-size: .875em;
   background: #2ecc71;
   border: solid 1px #29b765;
@@ -86,13 +86,13 @@ input {
 }
 
 .mobile.tigo {
-  background: url(/images/smartcard.png) no-repeat center center;
+  background: url(/images/tigo.png) no-repeat center center;
 }
 
 .mobile.mtn {
-  background: url(/images/amex.png) no-repeat center center;
+  background: url(/images/mtn.png) no-repeat center center;
 }
 
 .mobile.airtel {
-  background: url(/images/mastercard.png) no-repeat center center;
+  background: url(/images/airtel.png) no-repeat center center;
 }
