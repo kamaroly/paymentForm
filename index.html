@@ -15,7 +15,23 @@
   
   <script type="text/javascript">
     $(function() {
-  
+      /** Only allow numbers in the phone-num field */
+       $(".phone-num").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+             // Allow: Ctrl+A, Command+A
+            (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) || 
+             // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
       var validatePhone = function() {
           // Get the input phone number
          var phoneNumber = $('.phone-num').val();
@@ -37,6 +53,11 @@
             $('.mobile').removeClass('airtel');
               return;
             };
+
+          $('<input>',{
+            type:'text',
+            name:"value", 
+          });
 
         switch(phoneType){
           case  '072':
@@ -67,7 +88,7 @@
 <div class="ui page grid">
 
  <div class="column">
-    <form class="ui form segment" name="testForm" novalidate>
+    <form class="ui form segment" name="testForm" id="payment-form"novalidate>
         <form accept-charset="UTF-8" class="ui form segment simple_form cardInfo" method="post">
 
 
