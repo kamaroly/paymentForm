@@ -1,7 +1,15 @@
+ * {
+    font-family: "Helvetica Neue", Helvetica, Arial
+  }
+  div {
+    float: left;
+   
+    color: gray;
+  }
 .rahasi-form {
   padding: 2.825em 0 1.4125em 0;
-  font-size: 1.25em;
-  margin: 0 auto;
+  font-size: 1em;
+  margin: 0px auto;
 }
 input[type="email"],input[type="number"],input[type="password"],input[type="search"],input[type="tel"],input[type="text"],input[type="url"],input[type="color"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="month"],input[type="time"],input[type="week"] {
   width: 100%;
@@ -26,7 +34,7 @@ input[type="email"].identified,input[type="number"].identified,input[type="passw
 input[type="email"]:focus,input[type="number"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="color"]:focus,input[type="date"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="month"]:focus,input[type="time"]:focus,input[type="week"]:focus {
   border-color: #fff;
   -webkit-box-shadow: 0 0 .1875em #3498db;
-  box-shadow: 0 0 .1875em #3498db;
+  box-shadow: 0 0 .2875em #3498db;
   outline: none;
 }
 
@@ -44,7 +52,16 @@ input[type="submit"] {
   color: #fff;
   border-radius: .1875em;
 }
-
+button, input, optgroup, select, textarea {
+  line-height: 1.2125;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+input {
+  line-height: normal;
+  size:10;
+}
 .cancel-link {
   font-size: .875em;
   float: right;
