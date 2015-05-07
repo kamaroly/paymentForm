@@ -1,0 +1,279 @@
+﻿<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Register payment</title>
+
+  <link href="/assets/semantic/css/semantic.min.css" rel="stylesheet" type="text/css" />
+  
+  <style type="text/css">
+    div.container {
+      
+      margin: 0 auto;
+      font-family: arial;
+    }
+   #popup{
+      width: 100%;
+height: 100%;
+opacity: 0.95;
+border-radius: 5px;
+top: 0;
+left: 0;
+display: none;
+position: fixed;      
+background: rgba(0,0,0,0.6);
+overflow:auto;
+    }
+.content{
+
+  display: block;
+  margin: 1px 1px 0 1px;
+  padding: -1em;
+  min-height: 67px;
+  background: #f0f0f2;
+  background-image: -webkit-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: -moz-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: -ms-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: -o-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: linear-gradient(#f5f5f7,#e9e9ea);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #d3d3d4;
+  -webkit-border-radius: 7px 7px 0 0;
+  -moz-border-radius: 7px 7px 0 0;
+  -ms-border-radius: 7px 7px 0 0;
+  -o-border-radius: 7px 7px 0 0;
+  border-radius: 7px 7px 0 0;
+  -webkit-box-shadow: 0 1px 0 #fff;
+  -moz-box-shadow: 0 1px 0 #fff;
+  -ms-box-shadow: 0 1px 0 #fff;
+  -o-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 #fff;
+  cursor: default;
+  cursor: default;
+}
+.content>.title {
+  padding: 0 35px 13px 35px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+.content>.title>h1 {
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+  height: 22px;
+  padding-top: 53px;
+}
+.content>.title>h2 {
+  color: #5b5b65;
+  font-size: 13px;
+  font-family: "HelveticaNeueMedium","HelveticaNeue-Medium","Helvetica Neue Medium","HelveticaNeue","Helvetica Neue",Helvetica,Arial;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+.content>.title>h1, .content>.title>h2 {
+  text-shadow: 0 1px 0 #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.1em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.content>.close {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  width: 22px;
+  height: 23px;
+  background: url("/assets/img/close.png") no-repeat;
+  background-size: 100% 100%;
+  -webkit-filter: contrast(1);
+  -webkit-transition: -webkit-filter .15s linear;
+  -moz-transition: -webkit-filter .15s linear;
+  -ms-transition: -webkit-filter .15s linear;
+  -o-transition: -webkit-filter .15s linear;
+  transition: -webkit-filter .15s linear;
+  -webkit-transform: translateZ(0);
+  z-index: 25;
+}
+.content>.image>img {
+  background: #fff;
+  width: 64px;
+  height: 64px;
+  display: block;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  -ms-border-radius: 32px;
+  -o-border-radius: 32px;
+  border-radius: 32px;
+  float: left;
+  margin-bottom: 20px;
+
+}
+.content>.close.right {
+  right: 8px;
+  left: auto;
+  color: #000;
+  cursor: default;
+}
+  .ui.flag.input>i.flag {
+  cursor: default;
+  position: absolute;
+  text-align: center;
+  font-size: 1em;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5.82142em;
+  opacity: .5;
+  border-radius: 0 .2857rem .2857rem 0;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+ margin: .90rem 0 0;
+  border-radius: .2857rem 0 0 .2857rem;
+  }
+  .input.focus{
+    border-color:#F7AADD; 
+  } 
+
+  .ui.checkout {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(39,41,43,.15),0 1px 2px 0 rgba(0,0,0,.05);
+  margin: 0 auto;
+  border-radius: .2857rem;
+  border: none;
+  top: 17%;
+  width: 300px;
+  font-family: 'Raleway', sans-serif;
+}
+.checkout .inputs{
+  padding: 1em;
+}
+.ui.icon.input>i.icon.msisdn {
+  cursor: default;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  font-size: 36px;
+  right: 0;
+  margin: 0;
+  height: 100%;
+  width: .82142em;
+}
+  </style>
+<script type="text/javascript" charset="utf-8" async defer>
+  //function to validate empty field
+function check_empty(){
+if(document.getElementById('name').value == "" 
+|| document.getElementById('email').value == "" 
+||document.getElementById('msg').value == "" ){
+alert ("Fill All Fields !");
+}
+  else {  
+  document.getElementById('form').submit();  
+  alert ("Form submitted successfully...");
+  }
+}
+
+//function to display Popup
+function div_show(){ 
+document.getElementById('popup').style.display = "block";
+}
+
+//function to hide Popup
+function div_hide(){ 
+document.getElementById('popup').style.display = "none";
+}
+
+</script>
+  
+
+</head>
+<body id ="bdy" style="overflow:hidden;">
+<button class="ui black button" onclick ="div_show()">Pay with Mobile</button>
+  <div class="container" id="popup">
+    <div class="ui form checkout" ng-controller="RegisterController">
+<div class="content">
+    <div class="background">
+        <div class="realBackground"></div>
+    </div>
+    <a class="close right" onclick ="div_hide()">
+   
+    </a>
+    <div class="image">
+        <img src="https://stripe.com/img/documentation/checkout/marketplace.png">
+        </div>
+        <div class="title">
+            <h1>Demo Site</h1>
+            <h2>2 widgets ($20.00)</h2>
+        </div>
+    </div>
+      
+      <div class="checkout inputs">
+            <div class="ui dimmer" ng-class="{true: 'active', false: 'disabled'}[loading]">
+        <div class="ui text loader"><i class="cart icon"></i> Paying $20.00....</div>
+      </div>
+      <div class="field">
+       <div class="ui right flag left icon input">
+          <i class="mobile icon msisdn"></i>
+          <input id="Phone" placeholder="Phone" type="text" ng-model="user.email">
+           <i class="rw flag"></i>
+        </div>
+      </div>
+
+      <button class="positive fluid ui button" ng-click="register()">Pay $20.00</button>
+<div class="ui error message"></div>
+</div>
+     
+    </div>
+
+  </div>
+
+  <script src="/assets/jquery-1.10.2.min.js"></script>
+  <script src="/assets/semantic/javascript/semantic.min.js"></script>
+  <script src="/assets/angular.min.js"></script>
+  <script>
+
+    (function ($) {
+      $('.ui.form').form({
+       
+        email: {
+          identifier: 'Phone',
+          rules: [{
+            type: 'empty',
+            prompt: 'Please enter your valid phone number'
+          }]
+        }
+      }, {
+        on: 'blur'
+      });
+    }(jQuery));
+
+    function RegisterController($scope, $element) 
+    {
+      var registrationForm = $($element);
+
+      $scope.user = {};
+      $scope.loading = false;
+
+      $scope.isInvalid = function () {
+        return !registrationForm.form('validate form');
+      };
+
+      $scope.register = function () {
+        if (this.isInvalid()) {
+          return;
+        }
+
+        this.loading = true;
+        console.log(this.user);
+      };
+    }
+
+  </script>
+
+</body>
+</html>
