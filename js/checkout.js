@@ -1320,16 +1320,48 @@
 ////////////////////////////////////////
  
  $(function() {
+
+
+  // Add some stylesheet first
+  $('<link rel="stylesheet" type="text/css" href="/css/checkout.css">').insertBefore('.rahasi-form');
+
      
     ////////////////////////////////////////
     // FIRST CREATING TELEPHONE FORM INPUT //
     ////////////////////////////////////////
-    
+  var checkOutBotton = $('.rahasi-button');
+
+  // Get checkout out button data values
+  var amount = checkOutBotton.attr("data-amount");
+  var name   = checkOutBotton.attr("data-name");
+  var description = checkOutBotton.attr("data-description");
+  var key    = checkOutBotton.attr("data-key");
+  var image  = checkOutBotton.attr('data-image');
+  
+  console.log('amount:'+ amount); 
+  console.log('name :'+ name);
+  console.log('description :' + description);
+  console.log('key :' +key);
+  console.log('image :' +image);
+
+  // CHECKOUT HEADER
+  $('<div class="rahasi-form-content"></div>').insertBefore(checkOutBotton);  
+  // Adding closing button
+  $('<a class="rahasi-close">x</a>').appendTo('.rahasi-form-content');
+  // Company image section 
+  $('<div class="rahasi-form-image"></div>').insertAfter('.rahasi-close');
+  $('<img src="'+image+'">').appendTo('.rahasi-form-image');
+
+  // Builidng the title of the form
+  $('<div class="rahasi-form-title"></div>').insertAfter('.rahasi-form-image');
+  $('<h1>'+name+'</h1>').appendTo('.rahasi-form-title');
+  $('<h2>'+description+' ('+amount+')</h2>').appendTo('.rahasi-form-title');
+ 
     // adding phone div to the input
     $('<div>',{
         'class' :'cc-mobile-num__wrap'
          // appending the created element to 'rahasi-form':
-    }).appendTo('.rahasi-form');
+    }).insertAfter('.rahasi-form-content');
     // Add phone field to the form
     $('<input>', {
         'type' : 'tel',
@@ -1347,11 +1379,8 @@
         'aria-hidden' : 'true'
        // appending the created element t '.cc-mobile-num__wrap':
     }).appendTo('.cc-mobile-num__wrap');
-    
-    // Addig button to click at the end
-    $('button',{
-        'class'  : 'rahasi-pay-button positive  ui button'
-    }).appendTo('.cc-mobile-num__wrap');    
+      // Addig button to click at the end
+  $('<button class="rahasi-pay-button positive ui button">Pay '+amount+' Rwf</button>').insertAfter('.rahasi-phone');   
 
 
     ////////////////////////
@@ -1362,17 +1391,20 @@
       {
         name: 'tigo',
         pattern: /^\+25072/,
-        length: [13, 16]
+        length: [13, 16],
+        branding: 'green'
       },
       {
         name: 'mtn',
         pattern: /^\+25078/,
-        length: [13, 16]
+        length: [13, 16],
+        branding:'yellow'
       },
       {
         name: 'airtel',
         pattern: /^\+25073/,
-        length: [13, 16]
+        length: [13, 16],
+        branding: 'red'
       }];
 
       var operatorFromNumber = function(num) {
@@ -1394,15 +1426,31 @@
          var operator = operatorFromNumber(phone.val());
          
          // check the length of the phone 
-          if (phone.val().length<=4) 
+          if (phone.val().length<=6) 
             {
               $('.mobile').removeClass('tigo');
               $('.mobile').removeClass('mtn');
               $('.mobile').removeClass('airtel');
+              $('.mobile').html("");
               return;
             };
+            if (operators.indexOf(operator)) {
+              $('.mobile').removeClass('tigo');
+              $('.mobile').removeClass('mtn');
+              $('.mobile').removeClass('airtel');
+              $('.mobile').addClass(operator);
+              $('.mobile').html(operator);
 
-            $('.mobile').addClass(operator);
+              return ;
+
+            } 
+
+              $('.mobile').removeClass('tigo');
+              $('.mobile').removeClass('mtn');
+              $('.mobile').removeClass('airtel');
+              $('.mobile').html('Unknown phone');
+            return ;
+            
        };
  
    // $('.rahasi-phone').on('change paste keyup', function(e) 

@@ -286,12 +286,14 @@ document.getElementById('popup').style.display = "none";
             type: 'POST', 
             beforeSend: function (request)
             {
-                request.setRequestHeader("X-Authorization", "test_sk_185742e35f201dcbd13bb6c604bb43");
+                request.setRequestHeader("X-Authorization", "test_sk_4b236647a093da27fce3e219bed3c9");
             },
-            url: "http://localhost:8000/api/v1/charges",
+            url: "http://rahasi.com/api/v1/charges",
             data: data,
             success: function(resultData) { 
               console.log(resultData);
+              this.loading = false;
+
             }
         });
         saveData.error(function(error) { 

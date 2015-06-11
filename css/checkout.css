@@ -1,0 +1,258 @@
+body{
+  background: rgba(0,0,0,.6);
+}
+.rahasi-form {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(39,41,43,.15),0 1px 2px 0 rgba(0,0,0,.05);
+  margin: 0 auto;
+  border-radius: .2857rem;
+  border: none;
+  /*top: 17%;*/
+  width: 300px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+ .rahasi-form input[type="email"],.rahasi-form input[type="number"],.rahasi-form input[type="password"],.rahasi-form input[type="search"],.rahasi-form input[type="tel"],.rahasi-form input[type="text"],.rahasi-form input[type="url"],.rahasi-form input[type="color"],.rahasi-form input[type="date"],.rahasi-form input[type="datetime"],.rahasi-form input[type="datetime-local"],.rahasi-form input[type="month"],.rahasi-form input[type="time"],.rahasi-form input[type="week"] {
+  width: 100%;
+  display: block;
+  margin-top: .35em;
+  padding: .35em;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-radius: .1875em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rahasi-form input[type="email"].identified,.rahasi-form input[type="number"].identified,.rahasi-form input[type="password"].identified,.rahasi-form input[type="search"].identified,.rahasi-form input[type="tel"].identified,.rahasi-form input[type="text"].identified,.rahasi-form input[type="url"].identified,.rahasi-form input[type="color"].identified,.rahasi-form input[type="date"].identified,.rahasi-form input[type="datetime"].identified,.rahasi-form input[type="datetime-local"].identified,.rahasi-form input[type="month"].identified,.rahasi-form input[type="time"].identified,.rahasi-form input[type="week"].identified {
+  border-color: #2ecc71;
+}
+
+.rahasi-form input[type="email"]:focus,.rahasi-form input[type="number"]:focus,.rahasi-form input[type="password"]:focus,.rahasi-form input[type="search"]:focus,.rahasi-form input[type="tel"]:focus,.rahasi-form input[type="text"]:focus,.rahasi-form input[type="url"]:focus,.rahasi-form input[type="color"]:focus,.rahasi-form input[type="date"]:focus,.rahasi-form input[type="datetime"]:focus,.rahasi-form input[type="datetime-local"]:focus,.rahasi-form input[type="month"]:focus,.rahasi-form input[type="time"]:focus,.rahasi-form input[type="week"]:focus {
+  border-color: #fff;
+  -webkit-box-shadow: 0 0 .1875em #3498db;
+  box-shadow: 0 0 .2875em #3498db;
+  outline: none;
+}
+
+.rahasi-form input[type="email"]:focus.identified,.rahasi-form input[type="number"]:focus.identified,.rahasi-form input[type="password"]:focus.identified,.rahasi-form input[type="search"]:focus.identified,.rahasi-form input[type="tel"]:focus.identified,.rahasi-form input[type="text"]:focus.identified,.rahasi-form input[type="url"]:focus.identified,.rahasi-form input[type="color"]:focus.identified,.rahasi-form input[type="date"]:focus.identified,.rahasi-form input[type="datetime"]:focus.identified,.rahasi-form input[type="datetime-local"]:focus.identified,.rahasi-form input[type="month"]:focus.identified,.rahasi-form input[type="time"]:focus.identified,.rahasi-form input[type="week"]:focus.identified {
+  border-color: #2ecc71;
+  -webkit-box-shadow: 0 0 .1875em #2ecc71;
+  box-shadow: 0 0 .1875em #2ecc71;
+}
+
+.rahasi-form input[type="submit"] {
+  font-size: .875em;
+  background: #2ecc71;
+  border: solid 1px #29b765;
+  padding: .375em .5em;
+  color: #fff;
+  border-radius: .1875em;
+}
+button, input, optgroup, select, textarea {
+  line-height: 1.2125;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+input {
+  line-height: normal;
+  size:10;
+}
+.cancel-link {
+  font-size: .875em;
+  float: right;
+  color: #bbb;
+  padding-top: .375em;
+}
+
+/** PHONE SECTION */
+.cc-mobile-num__wrap{
+  position:relative;
+  margin-bottom: 10px;
+  width: 80%;
+  display: table;
+  margin: 0 auto;
+}
+.mobile{
+  position:absolute;
+  display:block;
+  right:.375em;
+  top:17%;
+  width:30%;
+  size:16px;
+  height:19px;
+  background: neutro;/*url('/images/visa.png') no-repeat center center*/;
+  background-size: 100%;
+}
+
+.mobile.tigo {
+  background:green; /*url(/images/tigo.png) no-repeat center center*/;
+  color:#fff;
+}
+
+.mobile.mtn {
+  background: yellow;/*url(/images/mtn.png) no-repeat center center;*/
+}
+
+.mobile.airtel {
+  background: red;/*url(/images/airtel.png) no-repeat center center*/;
+  color:#fff;
+}
+
+/** START BUTTON */
+.rahasi-pay-button {}
+  .ui.positive.button {
+  box-shadow: 0 0 0 0 rgba(39,41,43,.15)inset;
+}
+.ui.positive.button, .ui.positive.buttons .button {
+  background-color: #5bbd72!important;
+  color: #fff;
+  text-shadow: none;
+  margin-bottom: 8px;
+  background-image: none;
+}
+.ui.button.fluid, .ui.fluid.buttons, .ui.fluid.buttons>.button {
+  display: block;
+  width: 100%;
+}
+.ui.button, .ui.buttons .button, .ui.buttons .or {
+  font-size: 1rem;
+}
+.ui.button {
+  cursor: pointer;
+  display: block;
+  clear: both;  
+  width: 100%;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background-color: #e0e0e0;
+  color: rgba(0,0,0,.6);
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  margin: 0.25em 0 0;
+  padding: .571em 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  background-image: none;
+  border-radius: .2857rem;
+  box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(39,41,43,.15)inset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/** START HEADER CHECKOUT CSS */
+.rahasi-form-content {
+
+  display: block;
+  margin: 1px 1px 0 1px;
+  padding: -1em;
+  min-height: 64px;
+  width: 100%;
+  background: #f0f0f2;
+  background-image: -webkit-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: -moz-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: -ms-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: -o-linear-gradient(#f5f5f7,#e9e9ea);
+  background-image: linear-gradient(#f5f5f7,#e9e9ea);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #d3d3d4;
+  -webkit-border-radius: 7px 7px 0 0;
+  -moz-border-radius: 7px 7px 0 0;
+  -ms-border-radius: 7px 7px 0 0;
+  -o-border-radius: 7px 7px 0 0;
+  border-radius: 7px 7px 0 0;
+  -webkit-box-shadow: 0 1px 0 #fff;
+  -moz-box-shadow: 0 1px 0 #fff;
+  -ms-box-shadow: 0 1px 0 #fff;
+  -o-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 #fff;
+  cursor: default;
+  cursor: default;
+}
+
+.rahasi-form-content>.rahasi-close.right {
+  right: 8px;
+  left: auto;
+  color: #000;
+  cursor: default;
+}
+.rahasi-form-content>.rahasi-close {
+  position: relative;
+  float: right;
+  /*left: 8px;*/
+  width: 22px;
+  height: 23px;
+  background: url("/css/assets/img/close.png") no-repeat;
+  background-size: 100% 100%;
+  -webkit-filter: contrast(1);
+  -webkit-transition: -webkit-filter .15s linear;
+  -moz-transition: -webkit-filter .15s linear;
+  -ms-transition: -webkit-filter .15s linear;
+  -o-transition: -webkit-filter .15s linear;
+  transition: -webkit-filter .15s linear;
+  -webkit-transform: translateZ(0);
+  z-index: 25;
+}
+.rahasi-form-content>.rahasi-form-image>img {
+  background: #fff;
+  width: 64px;
+  height: 64px;
+  display: block;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  -ms-border-radius: 32px;
+  -o-border-radius: 32px;
+  border-radius: 32px;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.rahasi-form-content>.rahasi-form-title {
+  /*padding: 0 35px 13px 35px;*/
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+.rahasi-form-content>.rahasi-form-title>h1, .rahasi-form-content>.rahasi-form-title>h2 {
+  text-shadow: 0 1px 0 #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.1em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.rahasi-form-content>.rahasi-form-title>h1 {
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+  height: 22px;
+  padding-top: 3px;
+}
+.rahasi-form-content>.rahasi-form-title>h2 {
+  color: #5b5b65;
+  font-size: 13px;
+  font-family: "HelveticaNeueMedium","HelveticaNeue-Medium","Helvetica Neue Medium","HelveticaNeue","Helvetica Neue",Helvetica,Arial;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
