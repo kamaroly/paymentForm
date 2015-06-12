@@ -162,6 +162,7 @@ input {
   border: 1px solid #3079ed;
   font-size: 14px;
   color: #fcfcfc;
+  min-height: 34px;
 }
 
 /** START HEADER CHECKOUT CSS */
