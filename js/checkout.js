@@ -1,7 +1,20 @@
+// start by importing jquery first
+var jq = document.createElement('script');
+jq.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
+document.querySelector('head').appendChild(jq);
+jq.onload = procede;//DON'T TYPE PARENTHESIS
+
+//i.e. 'procede()' runs instantly and assigns return value to jq.onload
+//     'procede' gives it a function to run when it's ready (what you want)
+
+function procede()
+{
+//jQuery commands are loaded (do your magic)
+
  ////////////////////////////////////
  // START OF CARET JQUERY LIBARAY  //
  ////////////////////////////////////
- (function($) {
+ var checkout = (function($) {
   $.fn.caret = function(pos) {
     var target = this[0];
   var isContentEditable = target.contentEditable === 'true';
@@ -1319,16 +1332,10 @@
 // END OF JQUERY MOBILE PHONE NUMBER  //
 ////////////////////////////////////////
  
- $(function() {
 
-
-  // Add some stylesheet first
-  $('<link rel="stylesheet" type="text/css" href="/css/checkout.css">').insertBefore('.rahasi-form');
-
-     
-    ////////////////////////////////////////
-    // FIRST CREATING TELEPHONE FORM INPUT //
-    ////////////////////////////////////////
+ ///////////////////////////////
+ // DEFINING GLOBAL VARAIBLES //
+ ///////////////////////////////
   var checkOutBotton = $('.rahasi-button');
 
   // Get checkout out button data values
@@ -1337,12 +1344,14 @@
   var description = checkOutBotton.attr("data-description");
   var key    = checkOutBotton.attr("data-key");
   var image  = checkOutBotton.attr('data-image');
-  
-  console.log('amount:'+ amount); 
-  console.log('name :'+ name);
-  console.log('description :' + description);
-  console.log('key :' +key);
-  console.log('image :' +image);
+ $(function() {
+  // Add some stylesheet first
+  $('<link rel="stylesheet" type="text/css" href="http://rahasi.com/checkout/css/checkout.css">').insertBefore('.rahasi-form');
+
+     
+  ////////////////////////////////////////
+  // START TO BUILD THE FORM //
+  ////////////////////////////////////////
 
   // CHECKOUT HEADER
   $('<div class="rahasi-form-content"></div>').insertBefore(checkOutBotton);  
@@ -1458,12 +1467,7 @@
             
        };
  
-   // $('.rahasi-phone').on('change paste keyup', function(e) 
-   // {
-   //    var phone = $(this);
-   //    validatePhone(phone);
-   // });
-    // Multiply by 2 to ensure the cursor always ends up at the end;
+   // Multiply by 2 to ensure the cursor always ends up at the end;
   // Opera sometimes sees a carriage return as 2 characters.
     var telephone = $('[type=tel]');
 
@@ -1514,22 +1518,58 @@ jQuery(document).ready(function($) {
     var button = $(this);
     //Showing loading images
     button.html('<img src="/images/loading.gif"/>');
+
+    /*---------------------------
+     | STARTING PAYMENT VIA API |
+      -------------------------*/
+      // Start by preparing data
+      var msisdn =$('.rahasi-phone').val();
+      // Remove + sign then remove spaces
+      msisdn = msisdn.replace("+", "");
+      msisdn = msisdn.replace(/ /g,'');
+
+      var data ={
+            phone_number: msisdn,
+            amount      : amount,
+            description : description,
+            statement_desc : null
+        };
+        var headers ={
+          'X-Authorization':'test_sk_4b236647a093da27fce3e219bed3c9'
+        };
+        console.log(data);
+        // Simple POST request example (passing data) :
+        var saveData = $.ajax({
+
+            type: 'POST', 
+            beforeSend: function (request)
+            {
+                request.setRequestHeader("X-Authorization", key);
+            },
+            url: "http://rahasi.com/api/v1/charges",
+            data: data,
+            success: function(resultData) { 
+              console.log(resultData);
+              button.css('background', '#1aa90c');
+              button.html('success');
+
+              //Waiting for 2 seconds then close the form
+              setTimeout(function(){
+              $('.rahasi-form').fadeOut('slow');
+                },3000);
     
-    //Waiting for 3 seconds then show success
-    setTimeout(function()
-      {
-      button.css('background', '#1aa90c');
-      button.html('success');
+            }
+        });
+        saveData.error(function(error) { 
+          console.log(error);
+          button.css('background', 'red');
+              button.html('Error :"'+error.statusText+'" occured during payment');
 
-      //Waiting for 2 seconds then close the form
-      setTimeout(function(){
-      $('.rahasi-form').fadeOut('slow');
-        },2000);
-      }, 3000);
-
-
-    
+         });
+     /**
+      * ENDING PAYMENT |
+      */
   });
-
-
 });
+}
+

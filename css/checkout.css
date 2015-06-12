@@ -206,7 +206,7 @@ input {
   /*left: 8px;*/
   width: 22px;
   height: 23px;
-  background: url("/images/close.png") no-repeat;
+  background: url("http://rahasi.com/checkout/images/close.png") no-repeat;
   background-size: 100% 100%;
   -webkit-filter: contrast(1);
   -webkit-transition: -webkit-filter .15s linear;
