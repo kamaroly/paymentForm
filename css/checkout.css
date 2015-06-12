@@ -132,16 +132,15 @@ input {
   clear: both;  
   width: 100%;
   outline: 0;
-  border: none;
   vertical-align: baseline;
   background-color: #e0e0e0;
   color: rgba(0,0,0,.6);
   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-  margin: 0.25em 0 0;
+  margin: 0.55em 0 0.55em;
   padding: .571em 1.5em;
   text-transform: none;
   text-shadow: none;
-  font-weight: 300;
+  font-weight: 700;
   font-style: normal;
   text-align: center;
   text-decoration: none;
@@ -156,14 +155,19 @@ input {
   transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
   will-change: '';
   -webkit-tap-highlight-color: transparent;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#4787ed));
+  background-color: #4d90fe;
+  background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+  background-image: linear-gradient(top,#4d90fe,#4787ed);
+  border: 1px solid #3079ed;
+  font-size: 14px;
+  color: #fcfcfc;
 }
-
 
 /** START HEADER CHECKOUT CSS */
 .rahasi-form-content {
 
   display: block;
-  margin: 1px 1px 0 1px;
   padding: -1em;
   min-height: 64px;
   width: 100%;
@@ -201,7 +205,7 @@ input {
   /*left: 8px;*/
   width: 22px;
   height: 23px;
-  background: url("/css/assets/img/close.png") no-repeat;
+  background: url("/images/close.png") no-repeat;
   background-size: 100% 100%;
   -webkit-filter: contrast(1);
   -webkit-transition: -webkit-filter .15s linear;
@@ -232,12 +236,11 @@ input {
   position: relative;
   z-index: 1;
 }
-.rahasi-form-content>.rahasi-form-title>h1, .rahasi-form-content>.rahasi-form-title>h2 {
+.rahasi-form-content>.rahasi-form-title>h1, .rahasi-form-content>.rahasi-form-title>p {
   text-shadow: 0 1px 0 #fff;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  line-height: 1.1em;
+  /*white-space: nowrap;*/
   margin: 0;
   padding: 0;
   text-align: center;
@@ -249,7 +252,7 @@ input {
   height: 22px;
   padding-top: 3px;
 }
-.rahasi-form-content>.rahasi-form-title>h2 {
+.rahasi-form-content>.rahasi-form-title>p {
   color: #5b5b65;
   font-size: 13px;
   font-family: "HelveticaNeueMedium","HelveticaNeue-Medium","Helvetica Neue Medium","HelveticaNeue","Helvetica Neue",Helvetica,Arial;

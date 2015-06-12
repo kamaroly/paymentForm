@@ -1347,7 +1347,7 @@
   // CHECKOUT HEADER
   $('<div class="rahasi-form-content"></div>').insertBefore(checkOutBotton);  
   // Adding closing button
-  $('<a class="rahasi-close">x</a>').appendTo('.rahasi-form-content');
+  $('<a class="rahasi-close"></a>').appendTo('.rahasi-form-content');
   // Company image section 
   $('<div class="rahasi-form-image"></div>').insertAfter('.rahasi-close');
   $('<img src="'+image+'">').appendTo('.rahasi-form-image');
@@ -1355,7 +1355,7 @@
   // Builidng the title of the form
   $('<div class="rahasi-form-title"></div>').insertAfter('.rahasi-form-image');
   $('<h1>'+name+'</h1>').appendTo('.rahasi-form-title');
-  $('<h2>'+description+' ('+amount+')</h2>').appendTo('.rahasi-form-title');
+  $('<p>'+description+' <strong>('+amount+' Rwf)</strong></p>').appendTo('.rahasi-form-title');
  
     // adding phone div to the input
     $('<div>',{
@@ -1369,7 +1369,7 @@
         'id'   : 'rahasi-phone',
         'class': 'rahasi-phone',
         'pattern':'\\d*',
-        'value'   : '+250',
+        'value'   : '+250 7',
         'x-autocompletetype':'tel' 
     // appending the created element t '.cc-mobile-num__wrap':
     }).appendTo('.cc-mobile-num__wrap');
@@ -1379,10 +1379,15 @@
         'aria-hidden' : 'true'
        // appending the created element t '.cc-mobile-num__wrap':
     }).appendTo('.cc-mobile-num__wrap');
+      // Remove HTML 5 form validation
+      <!-- // suppress "invalid" events on URL inputs
+      $('input[type="tel"]').bind('invalid', function() {
+          return false;
+      });
       // Addig button to click at the end
-  $('<button class="rahasi-pay-button positive ui button">Pay '+amount+' Rwf</button>').insertAfter('.rahasi-phone');   
-
-
+    $('<button class="rahasi-pay-button blue ui button">Pay '+amount+' Rwf</button>').insertAfter('.rahasi-phone');   
+    // Set focus on the first text field:
+    $("input:text:visible:first").focus();
     ////////////////////////
     // ARRAY OF OPERATORS //
     ////////////////////////
@@ -1497,7 +1502,34 @@
                     // Force +250
                     this.value = '+250' + mobilePhoneNumber;
                   }
-
             });     
     });
+});
+
+
+ /** START CHECKING WHAT HAPPENS WHEN SOMEONE PRESSES PAY BUTTON*/
+
+jQuery(document).ready(function($) {
+  $('.rahasi-pay-button ').click(function(event) {
+    var button = $(this);
+    //Showing loading images
+    button.html('<img src="/images/loading.gif"/>');
+    
+    //Waiting for 3 seconds then show success
+    setTimeout(function()
+      {
+      button.css('background', '#1aa90c');
+      button.html('success');
+
+      //Waiting for 2 seconds then close the form
+      setTimeout(function(){
+      $('.rahasi-form').fadeOut('slow');
+        },2000);
+      }, 3000);
+
+
+    
+  });
+
+
 });
