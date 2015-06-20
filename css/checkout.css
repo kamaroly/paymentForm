@@ -1,6 +1,18 @@
 body{
-  background: rgba(0,0,0,.6);
+  /*background: rgba(0,0,0,.6);*/
 }
+div.RahasifadeMe {
+    opacity:0.7;
+    filter: alpha(opacity=20);
+    background-color:#000; 
+    width:100%; 
+    height:100%; 
+    z-index:800;
+    top:0; 
+    left:0; 
+    position:fixed; 
+  }
+
 .rahasi-form {
   position: relative;
   background-color: #fff;
@@ -11,6 +23,7 @@ body{
   /*top: 17%;*/
   width: 300px;
   text-align: center;
+  z-index: 999999;
   font-family: 'Raleway', sans-serif;
 
 }
@@ -36,14 +49,14 @@ body{
 }
 
 .rahasi-form input[type="email"]:focus,.rahasi-form input[type="number"]:focus,.rahasi-form input[type="password"]:focus,.rahasi-form input[type="search"]:focus,.rahasi-form input[type="tel"]:focus,.rahasi-form input[type="text"]:focus,.rahasi-form input[type="url"]:focus,.rahasi-form input[type="color"]:focus,.rahasi-form input[type="date"]:focus,.rahasi-form input[type="datetime"]:focus,.rahasi-form input[type="datetime-local"]:focus,.rahasi-form input[type="month"]:focus,.rahasi-form input[type="time"]:focus,.rahasi-form input[type="week"]:focus {
-  border-color: #fff;
+  border-color: #7caadd;
   -webkit-box-shadow: 0 0 .1875em #3498db;
   box-shadow: 0 0 .2875em #3498db;
   outline: none;
 }
 
 .rahasi-form input[type="email"]:focus.identified,.rahasi-form input[type="number"]:focus.identified,.rahasi-form input[type="password"]:focus.identified,.rahasi-form input[type="search"]:focus.identified,.rahasi-form input[type="tel"]:focus.identified,.rahasi-form input[type="text"]:focus.identified,.rahasi-form input[type="url"]:focus.identified,.rahasi-form input[type="color"]:focus.identified,.rahasi-form input[type="date"]:focus.identified,.rahasi-form input[type="datetime"]:focus.identified,.rahasi-form input[type="datetime-local"]:focus.identified,.rahasi-form input[type="month"]:focus.identified,.rahasi-form input[type="time"]:focus.identified,.rahasi-form input[type="week"]:focus.identified {
-  border-color: #2ecc71;
+  border-color: #7caadd;
   -webkit-box-shadow: 0 0 .1875em #2ecc71;
   box-shadow: 0 0 .1875em #2ecc71;
 }
@@ -259,4 +272,51 @@ input {
   font-family: "HelveticaNeueMedium","HelveticaNeue-Medium","Helvetica Neue Medium","HelveticaNeue","Helvetica Neue",Helvetica,Arial;
   font-weight: normal;
   padding-bottom: 5px;
+}
+
+
+
+/** START OF CHECKOUT BUTTON */
+.rahasi.positive.button {
+  box-shadow: 0 0 0 0 rgba(39,41,43,.15)inset;
+}
+.rahasi.positive.button, .rahasi.positive.buttons .button {
+  background-color: #5bbd72!important;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
+.rahasi.button, .rahasi.buttons .button, .rahasi.buttons .or {
+  font-size: 1rem;
+}
+.rahasi.button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background-color: #e0e0e0;
+  color: rgba(0,0,0,.6);
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  margin: 0 .25em 0 0;
+  padding: .78571em 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  background-image: none;
+  border-radius: .2857rem;
+  box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(39,41,43,.15)inset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
 }

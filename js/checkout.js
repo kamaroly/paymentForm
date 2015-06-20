@@ -2,11 +2,37 @@
 var jq = document.createElement('script');
 jq.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
 document.querySelector('head').appendChild(jq);
-jq.onload = procede;//DON'T TYPE PARENTHESIS
+jq.onload = loadRahasiCss;//DON'T TYPE PARENTHESIS
 
 //i.e. 'procede()' runs instantly and assigns return value to jq.onload
 //     'procede' gives it a function to run when it's ready (what you want)
 
+
+// Start by loading CSS first
+function loadRahasiCss()
+{
+
+  // Add some stylesheet first
+  $('<link rel="stylesheet" type="text/css" href="http://rahasi.com/checkout/css/checkout.css">').insertBefore('.rahasi-form');
+  
+  // Build the button
+  createPayButton();
+}
+//adding a button
+function createPayButton()
+{
+  $(function(){
+
+    $('<div class="positive rahasi button">Pay with Mobile</div>').insertBefore('.rahasi-form');
+
+    $('.rahasi.button').click(function(event)
+      {
+        event.preventDefault();
+         $(".rahasi.button").remove();
+        procede();
+      });
+  });
+}
 function procede()
 {
 //jQuery commands are loaded (do your magic)
@@ -1345,10 +1371,9 @@ function procede()
   var key    = checkOutBotton.attr("data-key");
   var image  = checkOutBotton.attr('data-image');
  $(function() {
-  // Add some stylesheet first
-  $('<link rel="stylesheet" type="text/css" href="http://rahasi.com/checkout/css/checkout.css">').insertBefore('.rahasi-form');
-
-     
+  
+  $('<div class="RahasifadeMe"></div>').insertBefore('.rahasi-form');
+   $('#bar').append('.rahasi-form');
   ////////////////////////////////////////
   // START TO BUILD THE FORM //
   ////////////////////////////////////////
@@ -1514,10 +1539,17 @@ function procede()
  /** START CHECKING WHAT HAPPENS WHEN SOMEONE PRESSES PAY BUTTON*/
 
 jQuery(document).ready(function($) {
+  // Listen to the event of closing the modal
+  $('.rahasi-close').click(function(event){
+
+      $('.rahasi-form-content').remove();
+      $('.cc-mobile-num__wrap').remove();
+      $('.RahasifadeMe').remove();
+      createPayButton();  
+    });
+
   $('.rahasi-pay-button ').click(function(event) {
     var button = $(this);
-    //Showing loading images
-    button.html('<img src="http://rahasi.com/checkout/images/loading.gif"/>');
 
     /*---------------------------
      | STARTING PAYMENT VIA API |
@@ -1527,6 +1559,17 @@ jQuery(document).ready(function($) {
       // Remove + sign then remove spaces
       msisdn = msisdn.replace("+", "");
       msisdn = msisdn.replace(/ /g,'');
+
+      if(msisdn.length!=12)
+      {
+        $('.rahasi-phone').css("border-color", "red");
+
+        return false;
+      }
+
+      $('.rahasi-phone').css("border-color", "green");
+      //Showing loading images
+      button.html('<img src="http://rahasi.com/checkout/images/loading.gif"/>');
 
       var data ={
             phone_number: msisdn,
@@ -1555,7 +1598,10 @@ jQuery(document).ready(function($) {
 
               //Waiting for 2 seconds then close the form
               setTimeout(function(){
-              $('.rahasi-form').fadeOut('slow');
+                $('.RahasifadeMe').remove();
+                $('.rahasi-form-content').remove();
+                $('.cc-mobile-num__wrap').remove();
+                createPayButton();
                 },3000);
     
             }
