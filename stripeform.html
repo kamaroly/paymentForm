@@ -1,0 +1,234 @@
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Demo Site</title>
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1"></head>
+<body class="stripeInFrame appView iframe desktop en stripeLoadError">
+
+<link rel="stylesheet" type="text/css" href="/css/stripe.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+
+    // Switch button controls
+    // 
+      $('.cardSection').html($('#cardSectionTemplate').html());
+
+    $('.mobile').on('click',function(event){
+      event.preventDefault();
+      $(this).addClass('selected') ;
+      $('.card').removeClass('selected');
+
+      // Hide card payment
+      $('.cardSection').html($('#mobileSectionTemplate').html())
+   });
+    $('.card').on('click',function(event){
+      event.preventDefault();
+      $(this).addClass('selected') ;
+      $('.cardSection').html($('#cardSectionTemplate').html());
+      $('.mobile').removeClass('selected');
+
+   });
+
+  });
+
+</script>
+<div class="overlayView active">
+
+	<a class="testMode" href="/-/test-mode" target="_blank" tabindex="-1">TEST MODE</a>
+	<form class="checkoutView" method="POST" novalidate="true" autocomplete="off" style="opacity: 1; transition: none; -webkit-transition: none; transform: translateY(0px) scale(1);  position: absolute;">
+		<div class="backgroundView" style="height: 792px;">
+			<div class="backgroundTop">
+				<div>
+				</div>
+			</div>
+			<div class="backgroundBottom" style="height: 900px;">
+				<div style="height: 950px; transition: none; -webkit-transition: none; transform: translateY(-338px);">
+				</div>
+			</div>
+		</div>
+		<div class="bodyView">
+			<div class="layoutView contentView" style="height: 527px;">
+				<div class="layoutSubview" style="z-index: 100; height: 110px; transform: translateY(0px); opacity: 1; transition: none; -webkit-transition: none;">
+					<header style="">
+					<div class="content">
+						<div class="background">
+							<div class="realBackground">
+							</div>
+						</div>
+						<a class="close" style="opacity: 1; transition: none; -webkit-transition: none;"></a>
+						<a class="back" style="display: none; opacity: 0; transition: none; -webkit-transition: none;"></a>
+						<div class="image">
+							<img src="http://www.tech360ng.com/wp-content/uploads/2014/02/Tigo-Logo.png">
+						</div>
+						<div class="title">
+							<h1>Demo Site</h1>
+							<h2>2 widgets ($20.00)</h2>
+						</div>
+					</div>
+					</header>
+				</div>
+				
+				<div class="layoutSubview" style="z-index: 100; height: 37px; transform: translateY(490px); opacity: 1; transition: none; -webkit-transition: none;">
+					<div class="buttonsView">
+						<div class="button submit" style="transform-origin: 100% 50% 0px;">
+							<div class="inner">
+								<button type="submit" id="submitButton">
+								<span>
+								<span class="iconTick" style="opacity: 1; transform: translateX(0px); transition: none; -webkit-transition: none;">Pay $20.00</span>
+								</span>
+								
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layoutSubview" style="height: 380px; transform: translateY(110px); opacity: 1; transition: none; -webkit-transition: none;">
+					<div class="layoutView paymentView" style="opacity: 1; height: 380px; transition: none; -webkit-transition: none; transform: translateX(0px); overflow: inherit;">
+						<div class="layoutSubview" style="height: 55px; transform: translateY(0px); opacity: 1; transition: none; -webkit-transition: none;">
+							<div class="emailInput input">
+								<input class="control" id="email" type="email" x-autocompletetype="email" autocompletetype="email" autocorrect="off" spellcheck="off" autocapitalize="off" placeholder="Email">
+								<span class="spinnerContainer" style="display: none;">
+								<div class="svgSpinner" style="width: 14px; height: 15px;">
+									<svg version="1.1" viewbox="0 0 44 46" width="14" height="15">
+																</svg>
+								</div>
+								</span>
+								<div class="svg icon" style="width: 30px; height: 30px;">
+									<svg version="1.1" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+									<g fill-rule="evenodd">
+									<path d="M1.86849119,1.00882648 C1.91231938,1.00300503 1.95704343,1 2.00247329,1 L11.9975267,1 C12.0428075,1 12.0874644,1.00306369 12.1312901,1.00899658 L7,5 L1.86849119,1.00882648 Z M1.05353134,1.67496881 C1.01882906,1.77613675 1,1.88463985 1,1.99754465 L1,9.00245535 C1,9.55338405 1.45576096,10 2.00247329,10 L11.9975267,10 C12.5511774,10 13,9.5536886 13,9.00245535 L13,1.99754465 C13,1.88482573 12.9809217,1.77647338 12.9458895,1.67541927 L7,6.29999999 L1.05353134,1.67496881 Z M2.00585866,0 C0.898053512,0 0,0.900176167 0,1.99201702 L0,9.00798298 C0,10.1081436 0.897060126,11 2.00585866,11 L11.9941413,11 C13.1019465,11 14,10.0998238 14,9.00798298 L14,1.99201702 C14,0.891856397 13.1029399,0 11.9941413,0 L2.00585866,0 Z M2.00585866,0" style="fill:#2b2b2b" transform="translate(8,10)"></path>
+									</g>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="layoutSubview" style="height: 43px; transform: translateY(55px); opacity: 1; transition: none; -webkit-transition: none;">
+							<div class="segmentedControl paymentMethodsSegmentedControl small">
+								<div class="content">
+									<a class="segmentedControl paymentMethodsSegmentedControlItem0 card selected" data-index="0" style="width: 48%;">
+									<span>
+									<span>Card</span>
+									</span>
+									</a>
+									<a class="segmentedControl paymentMethodsSegmentedControlItem1 mobile" data-index="1" style="width: 48%;">
+									<span>
+									<span>Mobile</span>
+									</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="layoutSubview" style="height: 247px; transform: translateY(98px); opacity: 1; transition: none; -webkit-transition: none;">
+							<div class="contentSwitcher">
+								<div class="inner">
+									<div class="content">
+										<div class="layoutView cardView" style="opacity: 1; transform: translateX(0px); display: block; transition: none; -webkit-transition: none; height: 247px;">
+											<div class="layoutSubview cardSection">
+												
+											</div>
+
+											<div class="layoutSubview mfsSection" >
+												
+											</div>
+											<div class="layoutSubview" style="display: none; opacity: 0; height: 69px; transform: translateY(247px); transition: none; -webkit-transition: none;">
+												<div class="labelWithCheckbox">
+													<div class="inner">
+														<a class="checkbox checked" href="#">
+														<span class="tick"></span>
+														<span class="focusRing"></span>
+														</a>
+														<label>Keep me logged in</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="legalLinksView" style="transition: none; -webkit-transition: none; transform: translateY(562px);">
+			<span class="">
+			<a href="/-/terms" target="_blank">Terms</a>
+			<a href="/-/privacy" target="_blank">Privacy</a>
+			</span>
+		</div>
+	</form>
+</div>
+
+
+<script id="cardSectionTemplate" type="text/template">
+  <div class="cardPaymentView">
+    <div class="cardNumberInput input top">
+      <input class="control" id="card_number" type="tel" x-autocompletetype="cc-number" autocompletetype="cc-number" autocorrect="off" spellcheck="off" autocapitalize="off" placeholder="Card number">
+      <div class="svg icon" style="width: 30px; height: 30px;">
+        <svg version="1.1" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+        <g fill-rule="evenodd">
+        <path d="M2.00585866,0 C0.898053512,0 0,0.900176167 0,1.99201702 L0,9.00798298 C0,10.1081436 0.897060126,11 2.00585866,11 L11.9941413,11 C13.1019465,11 14,10.0998238 14,9.00798298 L14,1.99201702 C14,0.891856397 13.1029399,0 11.9941413,0 L2.00585866,0 Z M2.00247329,1 C1.44882258,1 1,1.4463114 1,1.99754465 L1,9.00245535 C1,9.55338405 1.45576096,10 2.00247329,10 L11.9975267,10 C12.5511774,10 13,9.5536886 13,9.00245535 L13,1.99754465 C13,1.44661595 12.544239,1 11.9975267,1 L2.00247329,1 Z M1,3 L1,5 L13,5 L13,3 L1,3 Z M11,8 L11,9 L12,9 L12,8 L11,8 Z M9,8 L9,9 L10,9 L10,8 L9,8 Z M9,8" style="fill:#2b2b2b" transform="translate(8,10)"></path>
+        </g>
+        </svg>
+      </div>
+    </div>
+    <div class="cardExpiresInput input left bottom">
+      <input class="control" id="cc-exp" type="text" x-autocompletetype="off" autocompletetype="off" autocorrect="off" spellcheck="off" autocapitalize="off" placeholder="MM / YY">
+      <div class="svg icon" style="width: 30px; height: 30px;">
+        <svg version="1.1" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+        <g fill-rule="evenodd">
+        <path d="M2.0085302,1 C0.899249601,1 0,1.90017617 0,2.99201702 L0,10.007983 C0,11.1081436 0.901950359,12 2.0085302,12 L9.9914698,12 C11.1007504,12 12,11.0998238 12,10.007983 L12,2.99201702 C12,1.8918564 11.0980496,1 9.9914698,1 L2.0085302,1 Z M1.99539757,4 C1.44565467,4 1,4.43788135 1,5.00292933 L1,9.99707067 C1,10.5509732 1.4556644,11 1.99539757,11 L10.0046024,11 C10.5543453,11 11,10.5621186 11,9.99707067 L11,5.00292933 C11,4.44902676 10.5443356,4 10.0046024,4 L1.99539757,4 Z M3,1 L3,2 L4,2 L4,1 L3,1 Z M8,1 L8,2 L9,2 L9,1 L8,1 Z M3,0 L3,1 L4,1 L4,0 L3,0 Z M8,0 L8,1 L9,1 L9,0 L8,0 Z M8,0" style="fill:#2b2b2b" transform="translate(8,9)"></path>
+        </g>
+        </svg>
+      </div>
+      
+      
+    </div>
+    <div class="cardCVCInput input right bottom">
+      <input class="control" id="cc-csc" type="tel" autocomplete="off" autocorrect="off" spellcheck="off" autocapitalize="off" placeholder="CVC" maxlength="4">
+      <div class="svg icon" style="width: 30px; height: 30px;">
+        <svg version="1.1" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+        <g fill-rule="evenodd">
+        <path d="M8.8,4 C8.8,1.79086089 7.76640339,4.18628304e-07 5.5,0 C3.23359661,-4.1480896e-07 2.2,1.79086089 2.2,4 L3.2,4 C3.2,2.34314567 3.81102123,0.999999681 5.5,1 C7.18897877,1.00000032 7.80000001,2.34314567 7.80000001,4 L8.8,4 Z M1.99201702,4 C0.891856397,4 0,4.88670635 0,5.99810135 L0,10.0018986 C0,11.1054196 0.900176167,12 1.99201702,12 L9.00798298,12 C10.1081436,12 11,11.1132936 11,10.0018986 L11,5.99810135 C11,4.89458045 10.0998238,4 9.00798298,4 L1.99201702,4 Z M1.99754465,5 C1.44661595,5 1,5.45097518 1,5.99077797 L1,10.009222 C1,10.5564136 1.4463114,11 1.99754465,11 L9.00245535,11 C9.55338405,11 10,10.5490248 10,10.009222 L10,5.99077797 C10,5.44358641 9.5536886,5 9.00245535,5 L1.99754465,5 Z M1.99754465,5" style="fill:#2b2b2b" transform="translate(9,9)"></path>
+        </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  </script>
+
+  <script id="mobileSectionTemplate" type="text/template">
+  <div class="rememberMe withExpand">
+  <div class="labelWithCheckbox top">
+    <div class="inner">
+      
+      <label> Your phone number</label>
+    </div>
+  </div>
+  <div class="expandedContainer">
+    <div class="expanded" style="opacity: 1; transform: rotateX(0deg); transition: none; -webkit-transition: none;">
+      <p>
+        For security, <strong>Rahasi</strong> will send you a unique codethat you will enter alongside your mobile number pin:
+      </p>
+      <div class="telInput input">
+        <input class="control" type="tel" x-autocompletetype="phone-full" autocompletetype="phone-full" autocorrect="off" spellcheck="off" autocapitalize="off" name="phone" placeholder="(555) 123-1234">
+        <span class="flag">
+        <img src="/images/RW.png" style="opacity: 1; transform: scale(1); transition: none; -webkit-transition: none;">
+        </span>
+        <div class="svg icon" style="width: 30px; height: 30px;">
+          <svg version="1.1" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+          <g fill-rule="evenodd">
+          <path d="M2.50700176,0 C1.12242292,0 0,1.12201312 0,2.50291944 L0,11.4970806 C0,12.8794048 1.12165891,14 2.50700176,14 L6.49299824,14 C7.87757708,14 9,12.8779869 9,11.4970806 L9,2.50291944 C9,1.1205952 7.87834109,0 6.49299824,0 L2.50700176,0 Z M2.00292933,3 C1.44902676,3 1,3.45303631 1,3.99703014 L1,10.0029699 C1,10.5536144 1.43788135,11 2.00292933,11 L6.99707067,11 C7.55097324,11 8,10.5469637 8,10.0029699 L8,3.99703014 C8,3.4463856 7.56211865,3 6.99707067,3 L2.00292933,3 Z M4,12 L4,13 L5,13 L5,12 L4,12 Z M3.5,1 L3.5,2 L5.5,2 L5.5,1 L3.5,1 Z M3.5,1" style="fill:#2b2b2b" transform="translate(10,9)"></path>
+          </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+  </script>
+</body>
+</html>
