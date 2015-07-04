@@ -3,8 +3,6 @@
 <meta charset="utf-8">
 <title>Demo Site</title>
 <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1"></head>
-<body class="stripeInFrame appView iframe desktop en stripeLoadError">
-
 <link rel="stylesheet" type="text/css" href="/css/stripe.css">
 <script src="/js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -25,6 +23,7 @@
       $('.payButton').css('transform','translateY(400px)');
       $('.legalLinksView').css(' transform','translateY(400px);');
    });
+
     $('.card').on('click',function(event){
       event.preventDefault();
       $(this).addClass('selected') ;
@@ -36,11 +35,42 @@
 
    });
 
+    // if paybutton is clicked then show the form
+    $('.rahasicheckout').on('click',function(){
+      $('#rahasilayview').addClass('overlayView');
+      $('#rahasilayview').addClass('active');
+      $('#rahasilayview').css('display','block');
+    });
+    // If someone clicks on the close button then close the ovelay
+    $('.close').on('click',function(){
+      $('#rahasilayview').removeClass('active');
+      $('#rahasilayview').removeClass('overlayView');
+      $('#rahasilayview').css('display','none');
+    });
+
+    // If someone clicks on the other surface then close the form
+    $('#rahasilayview').on('click',function(e){
+       if( e.target !== this ) {
+       return;
+       }
+      //...closing form....
+      $('#rahasilayview').removeClass('active');
+      $('#rahasilayview').removeClass('overlayView');
+      $('#rahasilayview').css('display','none');
+
+    });
+      // Hidding rahasi form
+      $('#rahasilayview').removeClass('overlayView');
+      $('#rahasilayview').css('display','none');
+
+
   });
 
 </script>
-<div class="overlayView active">
+<input type="submit" value="pay" class="rahasicheckout positive rahasi button" />
+<body class="stripeInFrame appView iframe desktop en">
 
+<div class="overlayView" id="rahasilayview">
 	<a class="testMode" href="/-/test-mode" target="_blank" tabindex="-1">TEST MODE</a>
 	<form class="checkoutView" method="POST" novalidate="true" autocomplete="off" style="opacity: 1; transition: none; -webkit-transition: none; transform: translateY(0px) scale(1);  position: absolute;">
 		<div class="backgroundView" style="height: 792px;">
