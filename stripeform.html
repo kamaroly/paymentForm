@@ -6,13 +6,13 @@
 <body class="stripeInFrame appView iframe desktop en stripeLoadError">
 
 <link rel="stylesheet" type="text/css" href="/css/stripe.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 <script type="text/javascript">
   jQuery(document).ready(function($) {
 
     // Switch button controls
     // 
-      $('.cardSection').html($('#cardSectionTemplate').html());
+    $('.cardSection').html($('#cardSectionTemplate').html());
 
     $('.mobile').on('click',function(event){
       event.preventDefault();
@@ -21,11 +21,17 @@
 
       // Hide card payment
       $('.cardSection').html($('#mobileSectionTemplate').html())
+      $('.backgroundPosition').css('height','850');
+      $('.payButton').css('transform','translateY(400px)');
+      $('.legalLinksView').css(' transform','translateY(400px);');
    });
     $('.card').on('click',function(event){
       event.preventDefault();
       $(this).addClass('selected') ;
       $('.cardSection').html($('#cardSectionTemplate').html());
+      $('.backgroundPosition').css('height','780');
+      $('.payButton').css('transform','translateY(330px)');
+      $('.legalLinksView').css(' transform','translateY(380px);');
       $('.mobile').removeClass('selected');
 
    });
@@ -43,7 +49,7 @@
 				</div>
 			</div>
 			<div class="backgroundBottom" style="height: 900px;">
-				<div style="height: 950px; transition: none; -webkit-transition: none; transform: translateY(-338px);">
+				<div class="backgroundPosition" style="height: 780px; transition: none; -webkit-transition: none; transform: translateY(-338px);">
 				</div>
 			</div>
 		</div>
@@ -69,7 +75,7 @@
 					</header>
 				</div>
 				
-				<div class="layoutSubview" style="z-index: 100; height: 37px; transform: translateY(490px); opacity: 1; transition: none; -webkit-transition: none;">
+				<div class="layoutSubview payButton" style="z-index: 100; height: 37px; transform: translateY(330px); opacity: 1; transition: none; -webkit-transition: none;">
 					<div class="buttonsView">
 						<div class="button submit" style="transform-origin: 100% 50% 0px;">
 							<div class="inner">
@@ -91,7 +97,7 @@
 								<span class="spinnerContainer" style="display: none;">
 								<div class="svgSpinner" style="width: 14px; height: 15px;">
 									<svg version="1.1" viewbox="0 0 44 46" width="14" height="15">
-																</svg>
+								</svg>
 								</div>
 								</span>
 								<div class="svg icon" style="width: 30px; height: 30px;">
@@ -152,7 +158,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="legalLinksView" style="transition: none; -webkit-transition: none; transform: translateY(562px);">
+		<div class="legalLinksView" style="transition: none; -webkit-transition: none; transform: translateY(380px);">
 			<span class="">
 			<a href="/-/terms" target="_blank">Terms</a>
 			<a href="/-/privacy" target="_blank">Privacy</a>
@@ -213,7 +219,7 @@
         For security, <strong>Rahasi</strong> will send you a unique codethat you will enter alongside your mobile number pin:
       </p>
       <div class="telInput input">
-        <input class="control" type="tel" x-autocompletetype="phone-full" autocompletetype="phone-full" autocorrect="off" spellcheck="off" autocapitalize="off" name="phone" placeholder="(555) 123-1234">
+        <input class="control" type="tel" x-autocompletetype="phone-full" autocompletetype="phone-full" autocorrect="off" spellcheck="off" autocapitalize="off" name="phone" placeholder="250 722 123-000">
         <span class="flag">
         <img src="/images/RW.png" style="opacity: 1; transform: scale(1); transition: none; -webkit-transition: none;">
         </span>

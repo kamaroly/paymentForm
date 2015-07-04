@@ -4576,7 +4576,7 @@ header>.content>.close {
   left: 8px;
   width: 22px;
   height: 23px;
-  background: url("https://b.stripecdn.com/checkout/v3/images/close-gbN3V5bjbhRxDClwGYFQ.png") no-repeat;
+  background: url("/images/close.png") no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
 }
