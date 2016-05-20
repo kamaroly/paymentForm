@@ -13,7 +13,7 @@ function loadRahasiCss()
 {
 
   // Add some stylesheet first
-  $('<link rel="stylesheet" type="text/css" href="http://rahasi.com/checkout/css/checkout.css">').insertBefore('.rahasi-form');
+  $('<link rel="stylesheet" type="text/css" href="http://cdn.rawgit.com/kamaroly/paymentForm/css/checkout.css">').insertBefore('.rahasi-form');
   
   // Build the button
   createPayButton();
